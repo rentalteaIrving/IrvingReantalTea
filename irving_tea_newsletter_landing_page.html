@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irving Tea - October 2026 Volume 1</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1a1a1a;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .brew-shadow {
+            box-shadow: 4px 4px 0px #1E22AA;
+        }
+        .brew-shadow-red {
+            box-shadow: 4px 4px 0px #FF5A5F;
+        }
+        .brew-shadow-card {
+            box-shadow: 6px 6px 0px #1E22AA;
+        }
+        @keyframes steam {
+            0% { transform: translateY(0) scaleX(1); opacity: 0.8; }
+            50% { transform: translateY(-4px) scaleX(1.1); opacity: 1; }
+            100% { transform: translateY(-8px) scaleX(0.9); opacity: 0; }
+        }
+        .animate-steam {
+            animation: steam 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-[#FFFFFF] text-slate-800 antialiased selection:bg-[#FF5A5F] selection:text-white">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="hover:scale-105 transition-transform cursor-pointer">
+                    <path d="M20 45 L50 15 L80 45 V85 H20 Z" fill="#1E22AA"/>
+                    <rect x="35" y="55" width="30" height="18" rx="1.5" fill="white"/>
+                    <path d="M35 55 L50 64 L65 55" stroke="#1E22AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M80 58 C88 58 88 75 80 75" stroke="#1E22AA" stroke-width="5" stroke-linecap="round" fill="none"/>
+                    <path d="M42 8 Q50 -2 58 8" stroke="#FF5A5F" stroke-width="3" stroke-linecap="round" class="animate-steam"/>
+                </svg>
+                <span class="font-heading font-extrabold text-2xl tracking-tight text-[#1E22AA]">Irving Tea</span>
+            </div>
+            <div>
+                <button onclick="triggerSubscribe()" class="bg-[#FF5A5F] hover:bg-[#e04d52] text-white font-heading font-bold px-5 py-2.5 rounded-xl brew-shadow transition-all active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    <!-- Hero Section -->
+    <section class="relative bg-[#F4F4F7] py-16 lg:py-24 border-b border-slate-200 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full text-sm font-semibold text-[#1E22AA] mb-6 border border-slate-200 brew-shadow">
+                <span>☕ October, 2026 Volume 1</span>
+            </div>
+            <h1 class="font-heading font-black text-4xl sm:text-6xl text-[#1E22AA] tracking-tight mb-6 leading-tight">
+                Short-Term Rental Drama & Zero Chill
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-normal">
+                Your property rights depend entirely on whether City Hall likes your vibe. Get the inside scoop on Irving's latest STR showdowns.
+            </p>
+            <div class="max-w-md mx-auto bg-white p-3 rounded-2xl brew-shadow-card border-2 border-[#1E22AA] flex flex-col sm:flex-row gap-3">
+                <input type="email" id="heroEmail" placeholder="Enter your email address..." class="flex-1 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E22AA]">
+                <button onclick="handleFormSubmit()" class="bg-[#FF5A5F] hover:bg-[#e04d52] text-white font-heading font-bold px-6 py-3 rounded-xl brew-shadow transition-all active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+
+        <!-- The Vibe Check -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">☕</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">The Vibe Check</h2>
+            </div>
+            <div class="bg-[#F4F4F7] p-4 rounded-xl mb-6 border-l-4 border-[#FF5A5F]">
+                <p class="font-bold text-[#1E22AA]">TL;DR: City Hall is serving major short-term rental drama, and local operators are caught right in the middle.</p>
+            </div>
+            <p class="text-slate-700 text-lg leading-relaxed mb-6">
+                If you thought zoning meetings were just a snooze-fest, think again. The latest council session turned into an absolute circus over short-term rentals (STRs), complete with impassioned pleas from applicants begging for fair treatment, residents fiercely defending their cul-de-sacs, and photo evidence featuring former mayors at backyard crawfish boils. Welcome to <strong>The Lockdown</strong>, where your property rights depend entirely on whether the council likes your vibe.
+            </p>
+        </article>
+
+        <!-- Key Changes Table -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">📋</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">Key Changes: The New Rules of Engagement</h2>
+            </div>
+            <div class="overflow-x-auto my-6">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-[#1E22AA] text-white font-heading">
+                            <th class="p-4 rounded-tl-xl">Regulation Area</th>
+                            <th class="p-4">Old Vibe</th>
+                            <th class="p-4">The New Reality (The Drama)</th>
+                            <th class="p-4 rounded-tr-xl">What It Costs You</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm sm:text-base">
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-bold text-[#1E22AA]">STR Permitting</td>
+                            <td class="p-4 text-slate-600">"Do your thing"</td>
+                            <td class="p-4 text-slate-700">Mandatory Conditional Use Permits & strict neighborhood pushback</td>
+                            <td class="p-4 text-slate-700">Hours of public hearing anxiety</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-bold text-[#1E22AA]">Operational Rules</td>
+                            <td class="p-4 text-slate-600">Casual hosting</td>
+                            <td class="p-4 text-slate-700">Strict max occupancy caps & zero-tolerance noise rules</td>
+                            <td class="p-4 text-slate-700">Instant permit denial</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-bold text-[#1E22AA]">Enforcement</td>
+                            <td class="p-4 text-slate-600">Lax monitoring</td>
+                            <td class="p-4 text-slate-700">Hyper-vigilant code enforcement & neighbor watch alerts</td>
+                            <td class="p-4 text-slate-700">Daily stress & potential shutdown</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <!-- Don't Get Shut Down Checklist -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">🛠️</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">The "Don't Get Shut Down" Checklist</h2>
+            </div>
+            <p class="text-slate-700 text-lg mb-6 font-medium">Do not let the city catch you slipping. Follow these steps NOW:</p>
+            <div class="space-y-4">
+                <div class="bg-[#F4F4F7] p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-heading font-bold text-xl text-[#1E22AA] mb-2">Step 1: Audit Your Permits</h3>
+                    <p class="text-slate-700">Make sure your short-term rental registration and CUP requests are airtight. If you're operating under the radar, consider it a ticking time bomb.</p>
+                </div>
+                <div class="bg-[#F4F4F7] p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-heading font-bold text-xl text-[#1E22AA] mb-2">Step 2: Bulletproof Your Defense</h3>
+                    <p class="text-slate-700">Take a page from applicant Lydia Hong, who pushed back against neighborhood speculation, urging the council to judge her application strictly on facts and city criteria rather than personal bias.</p>
+                </div>
+                <div class="bg-[#F4F4F7] p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-heading font-bold text-xl text-[#1E22AA] mb-2">Step 3: Tighten Up Operations</h3>
+                    <p class="text-slate-700">Emphasize strict guest screening, noise monitors, and exterior security cameras just like applicant Juan Martinez, who highlighted his clean 6-month operating record to prove he takes pride in his property.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- The Neighbor Watch -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">👀</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">The Neighbor Watch</h2>
+            </div>
+            <div class="bg-[#FF5A5F]/10 p-6 rounded-2xl border border-[#FF5A5F]/30 mb-6">
+                <p class="font-heading font-bold text-[#FF5A5F] text-lg mb-1">Public sentiment:</p>
+                <p class="text-[#1E22AA] font-semibold text-xl">Spiced up, deeply protective, and ready to testify.</p>
+            </div>
+            <p class="text-slate-700 text-lg leading-relaxed mb-4">
+                The neighborhood group chats are in shambles. On one side, residents like Melissa Burnham came out swinging for the culture of old, established streets like Cox Drive, arguing that an Airbnb would "completely change the face of our neighborhood" and compromise local safety. On the flip side, applicants brought receipts: during one tense exchange, an applicant flashed photo evidence of a massive neighboring gathering—complete with 45 people, a live band, a crawfish festival, and an attending former mayor—to call out double standards on neighborhood noise and parties.
+            </p>
+            <p class="text-slate-700 text-lg font-bold">
+                The consensus? Trust issues are at an all-time high.
+            </p>
+        </article>
+
+        <!-- The Calendar -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">📅</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">The Calendar: Mark Your Territory</h2>
+            </div>
+            <p class="text-slate-700 text-lg mb-6">Upcoming dates you cannot afford to ghost:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#F4F4F7] p-6 rounded-2xl border-2 border-[#1E22AA]">
+                    <span class="inline-block bg-[#1E22AA] text-white text-xs font-bold px-3 py-1 rounded-full mb-3">🗓️ Timeline</span>
+                    <h3 class="font-heading font-bold text-xl text-[#1E22AA] mb-2">Next Formal Council Hearing</h3>
+                    <p class="text-slate-800 font-semibold mb-3">Date: Wednesday, November 4, 2026 at 7:00 PM</p>
+                    <p class="text-slate-600 text-sm"><strong>The Vibe:</strong> Where final votes drop and zoning fates are sealed. Be there or be regulated.</p>
+                </div>
+                <div class="bg-[#F4F4F7] p-6 rounded-2xl border-2 border-[#1E22AA]">
+                    <span class="inline-block bg-[#1E22AA] text-white text-xs font-bold px-3 py-1 rounded-full mb-3">🗓️ Timeline</span>
+                    <h3 class="font-heading font-bold text-xl text-[#1E22AA] mb-2">Public Comment Deadline</h3>
+                    <p class="text-slate-800 font-semibold mb-3">Date: Friday, November 13, 2026</p>
+                    <p class="text-slate-600 text-sm"><strong>The Vibe:</strong> Your last chance to slide into the public record before the door slams shut.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Follow the Money -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">💰</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">Follow the Money</h2>
+            </div>
+            <p class="text-slate-700 text-lg leading-relaxed mb-6">
+                Let's talk about who's funding the circus. Council Member Luis Canosa (Place 4) completely stole the show during the proceedings, dropping a sharp, deadpan quip about the dramatic photos flashed on screen (including the snapshot of the massive crawfish festival with a former mayor in attendance), treating the heated neighborhood dispute like an impromptu art gallery critique with his signature "great pictures" remark.
+            </p>
+            <p class="text-slate-700 text-lg leading-relaxed">
+                As a core candidate Directly Funded by the Families for Irving PAC, Canosa relies heavily on the PAC's local mobilization and strategic ground infrastructure to turn out his voter base. While counter-efforts like the Lone Star Action Fund frequently drop independent expenditure blitzes to support opposing candidates, the Families for Irving network continues to anchor the current council majority's electoral strategy.
+            </p>
+        </article>
+
+        <!-- For the Absolute Nerds -->
+        <article class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-[#1E22AA] brew-shadow-card">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-3xl">🤓</span>
+                <h2 class="font-heading font-black text-3xl text-[#1E22AA]">For the Absolute Nerds - Stream the Whole Session</h2>
+            </div>
+            <p class="text-slate-700 text-lg mb-6">Want to watch the municipal madness in real-time? Grab your iced coffee and stream the complete sessions here:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="mailto:irvingrentaltea@gmail.com?subject=Watch%20Session%20Part%201" class="bg-[#F4F4F7] hover:bg-[#1E22AA] hover:text-white text-[#1E22AA] p-4 rounded-xl border border-slate-300 font-heading font-bold text-center transition-all brew-shadow flex items-center justify-center gap-2">
+                    <span>▶ Watch Session Part 1</span>
+                </a>
+                <a href="mailto:irvingrentaltea@gmail.com?subject=Watch%20Session%20Part%202" class="bg-[#F4F4F7] hover:bg-[#1E22AA] hover:text-white text-[#1E22AA] p-4 rounded-xl border border-slate-300 font-heading font-bold text-center transition-all brew-shadow flex items-center justify-center gap-2">
+                    <span>▶ Watch Session Part 2</span>
+                </a>
+                <a href="mailto:irvingrentaltea@gmail.com?subject=Watch%20Session%20Part%203" class="bg-[#F4F4F7] hover:bg-[#1E22AA] hover:text-white text-[#1E22AA] p-4 rounded-xl border border-slate-300 font-heading font-bold text-center transition-all brew-shadow flex items-center justify-center gap-2">
+                    <span>▶ Watch Session Part 3</span>
+                </a>
+                <a href="mailto:irvingrentaltea@gmail.com?subject=Watch%20Session%20Part%204" class="bg-[#F4F4F7] hover:bg-[#1E22AA] hover:text-white text-[#1E22AA] p-4 rounded-xl border border-slate-300 font-heading font-bold text-center transition-all brew-shadow flex items-center justify-center gap-2">
+                    <span>▶ Watch Session Part 4</span>
+                </a>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 45 L50 15 L80 45 V85 H20 Z" fill="white"/>
+                    <rect x="35" y="55" width="30" height="18" rx="1.5" fill="#1E22AA"/>
+                    <path d="M35 55 L50 64 L65 55" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M80 58 C88 58 88 75 80 75" stroke="white" stroke-width="5" stroke-linecap="round" fill="none"/>
+                    <path d="M42 8 Q50 -2 58 8" stroke="#FF5A5F" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span class="font-heading font-extrabold text-2xl tracking-tight text-white">Irving Tea</span>
+            </div>
+            <p class="text-slate-300 max-w-lg mx-auto">
+                Stay ahead of the curve. Never miss a single drop of Irving's municipal drama.
+            </p>
+            <div>
+                <a href="mailto:irvingrentaltea@gmail.com?subject=Subscribe%20to%20Irving%20Tea" onclick="triggerSubscribe(event)" class="inline-block bg-[#FF5A5F] hover:bg-[#e04d52] text-white font-heading font-bold px-8 py-4 rounded-2xl brew-shadow-card transition-all active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer">
+                    Subscribe Now (irvingrentaltea@gmail.com)
+                </a>
+            </div>
+            <p class="text-xs text-slate-400 pt-8">
+                &copy; 2026 Irving Tea. All rights reserved. Built with Morning Brew vibes.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="subscribeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 border-2 border-[#1E22AA] brew-shadow-card relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold text-xl cursor-pointer">
+                &times;
+            </button>
+            <div class="text-center space-y-4">
+                <div class="w-16 h-16 bg-[#1E22AA]/10 rounded-full flex items-center justify-center mx-auto text-3xl">
+                    ☕
+                </div>
+                <h3 class="font-heading font-black text-2xl text-[#1E22AA]">You're Almost In!</h3>
+                <p class="text-slate-600 text-sm">
+                    We tried opening your email client. If it didn't open automatically, simply copy the email below and send us an email with the word <strong>"subscribe"</strong> to complete your subscription.
+                </p>
+                <div class="bg-[#F4F4F7] p-3 rounded-xl border border-slate-300 flex items-center justify-between">
+                    <span id="emailToCopy" class="font-mono text-sm text-[#1E22AA] font-bold">irvingrentaltea@gmail.com</span>
+                    <button onclick="copyEmail()" id="copyBtn" class="bg-[#1E22AA] hover:bg-[#151877] text-white font-heading font-bold text-xs px-3 py-2 rounded-lg transition-all cursor-pointer">
+                        Copy Email
+                    </button>
+                </div>
+                <div class="pt-4">
+                    <button onclick="closeModal()" class="w-full bg-[#FF5A5F] hover:bg-[#e04d52] text-white font-heading font-bold py-3 rounded-xl brew-shadow transition-all cursor-pointer">
+                        Got it, Thanks!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Workflow & Modal -->
+    <script>
+        function triggerSubscribe(e) {
+            if (e) e.preventDefault();
+            window.location.href = "mailto:irvingrentaltea@gmail.com?subject=Subscribe%20to%20Irving%20Tea&body=subscribe";
+    showModal();
+        }
+
+        function handleFormSubmit() {
+            const emailInput = document.getElementById('heroEmail');
+            const email = emailInput.value.trim();
+            window.location.href = `mailto:irvingrentaltea@gmail.com?subject=Subscribe%20to%20Irving%20Tea&body=subscribe%20${encodeURIComponent(email)}`;
+            showModal();
+        }
+
+        function showModal() {
+            const modal = document.getElementById('subscribeModal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('subscribeModal');
+            modal.classList.add('hidden');
+        }
+
+        function copyEmail() {
+            const emailText = document.getElementById('emailToCopy').innerText;
+            navigator.clipboard.writeText(emailText).then(() => {
+                const copyBtn = document.getElementById('copyBtn');
+                copyBtn.innerText = 'Copied!';
+                copyBtn.classList.add('bg-green-600');
+                setTimeout(() => {
+                    copyBtn.innerText = 'Copy Email';
+                    copyBtn.classList.remove('bg-green-600');
+                }, 2000);
+            });
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('subscribeModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

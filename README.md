@@ -1,2 +1,0 @@
-# IrvingReantalTea
-STR Newsletter
